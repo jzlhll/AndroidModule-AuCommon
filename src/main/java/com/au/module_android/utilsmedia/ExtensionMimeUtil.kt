@@ -39,7 +39,8 @@ android:resource="@xml/file_paths" />
 </provider>
 一起使用
  */
-class MediaTypeUtil private constructor() {
+
+class ExtensionMimeUtil private constructor() {
     companion object {
         fun isUriHeic(mimeType:String) : Boolean{
             val extension = MimeTypeMap.getSingleton().getExtensionFromMimeType(mimeType)

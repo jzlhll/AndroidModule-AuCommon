@@ -1,4 +1,4 @@
-package com.au.module_android.utils
+package com.au.module_android.utilthread
 
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.CoroutineScope

@@ -1,4 +1,4 @@
-package com.au.module_android.utils;
+package com.au.module_android.collections;
 
 import java.util.LinkedList;
 import java.util.List;

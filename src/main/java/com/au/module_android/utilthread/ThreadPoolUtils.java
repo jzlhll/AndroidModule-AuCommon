@@ -1,4 +1,4 @@
-package com.au.module_android.utils;
+package com.au.module_android.utilthread;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

@@ -1,7 +1,12 @@
-package com.au.module_android.utils
-import kotlinx.coroutines.*
+package com.au.module_android.utilthread
+
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.channels.Channel
 import kotlinx.coroutines.channels.consumeEach
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.newSingleThreadContext
 
 /**
  * 替代HandlerThread实现的单线程协程排队工作任务队列
@@ -10,7 +15,7 @@ import kotlinx.coroutines.channels.consumeEach
 class SingleCoroutineTaskExecutor2 {
     @OptIn(DelicateCoroutinesApi::class)
     private val singleThreadContext = newSingleThreadContext("SequentialWorker")
-    private val taskChannel = Channel<suspend () -> Unit>(Channel.UNLIMITED)
+    private val taskChannel = Channel<suspend () -> Unit>(Channel.Factory.UNLIMITED)
 
     init {
         CoroutineScope(singleThreadContext).launch {
