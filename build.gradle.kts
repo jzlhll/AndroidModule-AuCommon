@@ -2,6 +2,7 @@ plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
     id("org.jetbrains.kotlin.plugin.serialization")
+    id("maven-publish")
 }
 
 android {
@@ -96,4 +97,17 @@ dependencies {
 
     implementation(libs.androidx.core.splashscreen)
     // implementation(libs.android.cn.oaid)
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            create<MavenPublication>("release") {
+                from(components["release"])
+                groupId = "com.github.jzlhll"
+                artifactId = "module-androidcommon"
+                version = "0.1.0"
+            }
+        }
+    }
 }
